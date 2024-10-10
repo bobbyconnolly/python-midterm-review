@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Scripting Midterm Study Guide</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        color: #2c3e50;
+        border-bottom: 2px solid #2c3e50;
+        padding-bottom: 10px;
+      }
+      h2 {
+        color: #34495e;
+        margin-top: 30px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+      pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+      .note {
+        background-color: #e7f3fe;
+        border-left: 6px solid #2196f3;
+        margin-bottom: 15px;
+        padding: 4px 12px;
+      }
+      .example {
+        background-color: #e8f5e9;
+        border-left: 6px solid #4caf50;
+        margin-bottom: 15px;
+        padding: 4px 12px;
+      }
+      .keyword {
+        color: #0000ff;
+      }
+      .comment {
+        color: #008000;
+      }
+      .string {
+        color: #a31515;
+      }
+      .number {
+        color: #0000ff;
+      }
+      .function {
+        color: #795e26;
+      }
+      .highlight {
+        background-color: #ffff00;
+      }
+      .not-on-exam {
+        background-color: #ffe6e6;
+        border: 2px solid #ff9999;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 15px;
+      }
+      .not-on-exam p {
+        margin: 0;
+        color: #c05454;
+        font-weight: bold;
+      }
+      .example-not-on-exam {
+        background-color: #fff5e6; /* Light orange background */
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Python Scripting Midterm Study Guide</h1>
+
+    <div class="note">
+      <p>
+        <strong>Note:</strong> This midterm will be held on Tuesday, October 15 at 1:00 pm. The exam will be on paper,
+        so practice writing all the code in this document by hand!
+      </p>
+    </div>
+
+    <h2>1. Python Basics Review</h2>
+    <p>Reviewing fundamental Python concepts:</p>
+
+    <div class="example">
+      <h3>Example: Various Python basics</h3>
+      <pre><code><span class="comment"># Variables and types</span>
+x = <span class="number">5</span>  <span class="comment"># int</span>
+y = <span class="number">3.14</span>  <span class="comment"># float</span>
+name = <span class="string">"Alice"</span>  <span class="comment"># str</span>
+is_student = <span class="keyword">True</span>  <span class="comment"># bool</span>
+
+<span class="comment"># Control flow</span>
+<span class="keyword">if</span> x > <span class="number">0</span>:
+    <span class="function">print</span>(<span class="string">"Positive"</span>)
+<span class="keyword">elif</span> x < <span class="number">0</span>:
+    <span class="function">print</span>(<span class="string">"Negative"</span>)
+<span class="keyword">else</span>:  <span class="comment"># x == 0:</span>
+    <span class="function">print</span>(<span class="string">"Zero"</span>)
+
+<span class="comment"># Functions</span>
+<span class="keyword">def</span> <span class="function">greet</span>(name):
+    <span class="keyword">return</span> <span class="function">f</span><span class="string">"Hello, {name}!"</span>
+
+<span class="comment"># Built-in functions</span>
+numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">9</span>]
+<span class="function">print</span>(<span class="function">len</span>(numbers))  <span class="comment"># Output: 5</span>
+<span class="function">print</span>(<span class="function">max</span>(numbers))  <span class="comment"># Output: 9</span>
+<span class="function">print</span>(<span class="function">min</span>(numbers))  <span class="comment"># Output: 1</span>
+<span class="function">print</span>(<span class="function">sum</span>(numbers))  <span class="comment"># Output: 19</span></code></pre>
+    </div>
+
+    <ul>
+      <li>What are the main data types in Python? How can you check the type of a variable?</li>
+      <li>Explain that the built-in function <code>len()</code> counts the number of elements in a list.</li>
+      <li>Explain the difference between <code>=</code> and <code>==</code> in Python.</li>
+    </ul>
+    <h2>2. Variable Reassignment and Type</h2>
+    <p>Understanding how variable reassignment works in Python and how to check variable types:</p>
+
+    <div class="example">
+      <h3>Example 1: Variable reassignment in a loop</h3>
+      <pre><code>total = <span class="number">0</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(<span class="number">1</span>, <span class="number">6</span>):
+    total += i
+    <span class="function">print</span>(<span class="function">f</span><span class="string">"After adding {i}, total is now {total}"</span>)
+
+<span class="comment"># Output:
+# After adding 1, total is now 1
+# After adding 2, total is now 3
+# After adding 3, total is now 6
+# After adding 4, total is now 10
+# After adding 5, total is now 15</span></code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Example 2: Checking variable types</h3>
+      <pre><code>x = <span class="keyword">True</span>
+    
+<span class="comment"># Using isinstance() function</span>
+<span class="function">print</span>(<span class="function">isinstance</span>(x, <span class="function">bool</span>))  <span class="comment"># Output: True</span>
+
+<span class="comment"># Comparing with type directly</span>
+<span class="function">print</span>(<span class="function">type</span>(x) == <span class="function">bool</span>)  <span class="comment"># Output: True</span></code></pre>
+    </div>
+
+    <ul>
+      <li>
+        Explain that <code>total += 1</code> is simply a more concise syntax for writing <code>total = total + 1</code>.
+      </li>
+      <li>Describe the different methods of checking a variable's type and when each might be useful.</li>
+    </ul>
+
+    <h2>3. Control Flow</h2>
+    <p>Understanding <code>break</code>, <code>continue</code>, and <code>return</code> statements:</p>
+
+    <div class="example">
+      <h3>Example: Using break and continue</h3>
+      <pre><code><span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(<span class="number">10</span>):
+    <span class="keyword">if</span> i == <span class="number">3</span>:
+        <span class="keyword">continue</span>  <span class="comment"># Skip 3</span>
+    <span class="keyword">if</span> i == <span class="number">7</span>:
+        <span class="keyword">break</span>  <span class="comment"># Stop at 7</span>
+    <span class="function">print</span>(i)
+
+<span class="comment"># Output: 0, 1, 2, 4, 5, 6</span></code></pre>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>Note:</strong> The <code>range()</code> function generates a sequence of numbers.
+        <code>range(10)</code> produces numbers from 0 to 9.
+      </p>
+    </div>
+
+    <ul>
+      <li>How would you use <code>break</code> to exit a loop when a certain condition is met?</li>
+      <li>In what situations would you use <code>continue</code> instead of <code>break</code>?</li>
+    </ul>
+
+    <div class="example">
+      <h3>Example: Using return for early exit</h3>
+      <pre><code>  <span class="keyword">def</span> <span class="function">find_even</span>(numbers):
+      <span class="keyword">for</span> num <span class="keyword">in</span> numbers:
+          <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span>:
+              <span class="keyword">return</span> num  <span class="comment"># Exit function when even number is found</span>
+              
+      <span class="comment"># Statements written here happen after the for loop completes and the function did not exit</span>
+      <span class="keyword">return</span> <span class="keyword">None</span>  <span class="comment"># If no even number is found</span>
+  
+  <span class="comment"># DEMO AREA</span>
+  number_list = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]
+  result = find_even(number_list)
+  <span class="keyword">print</span>(<span class="string">f"The first even number found is: </span>{result}<span class="string">"</span>)
+  
+  <span class="comment"># Another example with no even numbers</span>
+  odd_number_list = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]
+  result = find_even(odd_number_list)
+  <span class="keyword">print</span>(<span class="string">f"Result when no even number is found: </span>{result}<span class="string">"</span>)</code></pre>
+    </div>
+
+    <ul>
+      <li>
+        Explain why using <code>break</code> instead of <code>return</code> in the code above would be incorrect,
+        causing the function to return <code>None</code> instead of the even number.
+      </li>
+    </ul>
+
+    <div class="note">
+      <p>
+        <strong>Note:</strong> <code>None</code> is a special constant in Python that represents the absence of a value
+        or a null value. If you don't specify a <code>return</code> statement at the end of the function,
+        <code>None</code> is automatically returned.
+      </p>
+    </div>
+
+    <ul>
+      <li>Explain how you can use <code>return</code> to exit a function early if certain conditions are not met.</li>
+    </ul>
+
+    <h2>4. Statements and Statement Nesting</h2>
+    <p>Understanding how to use and nest different types of statements:</p>
+
+    <div class="example">
+      <h3>Example: Nested statements</h3>
+      <pre><code><span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(<span class="number">1</span>, <span class="number">6</span>):
+    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:
+        <span class="function">print</span>(<span class="function">f</span><span class="string">"{i} is even"</span>)
+    <span class="keyword">else</span>:
+        <span class="function">print</span>(<span class="function">f</span><span class="string">"{i} is odd"</span>)
+        <span class="keyword">if</span> i % <span class="number">3</span> == <span class="number">0</span>:
+            <span class="function">print</span>(<span class="function">f</span><span class="string">"{i} is also divisible by 3"</span>)
+
+<span class="comment"># Output:
+# 1 is odd
+# 2 is even
+# 3 is odd
+# 3 is also divisible by 3
+# 4 is even
+# 5 is odd</span></code></pre>
+    </div>
+
+    <ul>
+      <li>Create a program that uses nested if-statements to categorize a number as positive/negative and even/odd.</li>
+    </ul>
+
+    <h2>5. Lists and List Slicing</h2>
+    <p>Understanding list creation, indexing, and slicing:</p>
+    <div class="example">
+      <h3>Example: List slicing</h3>
+      <pre><code>  my_list = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]
+  <span class="function">print</span>(my_list[<span class="number">2</span>:<span class="number">7</span>])    <span class="comment"># Output: [2, 3, 4, 5, 6]</span>
+  <span class="function">print</span>(my_list[::<span class="number">2</span>])    <span class="comment"># Output: [0, 2, 4, 6, 8]</span>
+  <span class="function">print</span>(my_list[::&shy;<span class="highlight"><span class="number">-1</span></span>])   <span class="comment"># Output: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]</span></code></pre>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>Note:</strong> In list slicing <code>my_list[start:stop:step]</code>, if <code>start</code> is not
+        specified, it defaults to the beginning of the list (index 0). If <code>stop</code> is not specified, it
+        defaults to the end of the list (the list's length). For example, <code>my_list[:5]</code> is equivalent to
+        <code>my_list[0:5]</code>, and <code>my_list[2:]</code> is equivalent to <code>my_list[2:len(my_list)]</code>.
+      </p>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>Note:</strong> There's no difference between <code>my_list[1:5]</code> and
+        <code>my_list[1:5<span class="highlight">:</span>]</code> because the 3rd argument (the step) is not specified
+        and defaults to step=1.
+      </p>
+    </div>
+
+    <ul>
+      <li>How do you create a new list containing every third element of an existing list?</li>
+      <li>
+        What does the following code do: <code>my_list[::<span class="highlight">-1</span>]</code>?
+      </li>
+      <li>How would you extract the last five elements of a list?</li>
+    </ul>
+
+    <h2>6. Using enumerate()</h2>
+    <p>Understanding how to use <code>enumerate()</code> to get both index and value:</p>
+
+    <div class="example">
+      <h3>Example: Using enumerate() with a list</h3>
+      <pre>    <code>fruits = [<span class="string">"apple"</span>, <span class="string">"banana"</span>, <span class="string">"cherry"</span>]
+    
+    <span class="keyword">for</span> i, f <span class="keyword">in</span> <span class="function">enumerate</span>(fruits):
+        <span class="function">print</span>(<span class="function">f</span><span class="string">"Index {i}: {f}"</span>)
+    
+    <span class="comment"># Output:
+    # Index 0: apple
+    # Index 1: banana
+    # Index 2: cherry</span></code></pre>
+    </div>
+
+    <ul>
+      <li>
+        As shown above, explain how you can use <code>enumerate()</code> to obtain the index and value of all the
+        elements in a list.
+      </li>
+      <li>
+        <strong>Challenge</strong>: Write a function that uses <code>enumerate()</code> to find all occurrences of a
+        specific element in a list and return their indices. <br />
+        Guidance:
+        <ol>
+          <li>Define a function that takes two parameters: the list to search and the element to find.</li>
+          <li>Initialize an empty list to store the indices of occurrences.</li>
+          <li>Use a for loop with enumerate() to iterate through the list.</li>
+          <li>In each iteration, check if the current element matches the one we're looking for.</li>
+          <li>
+            If there's a match, append the current index to our list of indices using the <code>.append()</code> method.
+          </li>
+          <li>After the loop, return the list of indices.</li>
+        </ol>
+        Try implementing this function using these steps!
+      </li>
+    </ul>
+
+    <h2>7. Dictionaries</h2>
+    <p>Creating, modifying, and accessing dictionary data:</p>
+
+    <div class="example">
+      <h3>Example: Working with dictionaries</h3>
+      <pre><code><span class="comment"># Creating a dictionary</span>
+my_dict = {<span class="string">"name"</span>: <span class="string">"Alice"</span>, <span class="string">"age"</span>: <span class="number">30</span>, <span class="string">"city"</span>: <span class="string">"New York"</span>}
+
+<span class="comment"># Adding/Updating entries</span>
+my_dict[<span class="string">"job"</span>] = <span class="string">"Engineer"</span>  <span class="comment"># Adding a new entry</span>
+my_dict[<span class="string">"age"</span>] = <span class="number">31</span>  <span class="comment"># Updating an existing entry</span>
+
+<span class="comment"># Removing an entry</span>
+<span class="keyword">del</span> my_dict[<span class="string">"city"</span>]
+
+<span class="comment"># Safely getting a value</span>
+<span class="function">print</span>(my_dict.get(<span class="string">"salary"</span>, <span class="string">"Not specified"</span>))  <span class="comment"># Output: Not specified</span>
+</code></pre>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>Note:</strong> The syntax for adding and updating dictionary entries is the same:
+        <code>my_dict["key"] = value</code>. If the key doesn't exist, it adds a new entry. If it already exists, it
+        updates the value.
+      </p>
+    </div>
+
+    <ul>
+      <li>How do you create a dictionary?</li>
+      <li>How do you add and update entries inside of a dictionary?</li>
+      <li>How do you delete an entry from a dictionary?</li>
+      <li>
+        Know that you can create a new, empty dictionary with <code>{}</code> and assign it to a variable
+        <code>d = {}</code> if you want.
+      </li>
+      <li>
+        Know that you can safely get a value from a dictionary with a default if the key doesn't exist using the
+        <code>.get()</code> method.
+      </li>
+    </ul>
+
+    <h2>8. Dictionary Entries, Keys, and Values</h2>
+    <p>Understanding different types of dictionary values and how to work with them:</p>
+
+    <div class="example">
+      <h3>Example: Dictionary with various value types</h3>
+      <pre><code>student = {
+    <span class="string">"name"</span>: <span class="string">"Alice"</span>,
+    <span class="string">"age"</span>: <span class="number">20</span>,
+    <span class="string">"gpa"</span>: <span class="number">3.8</span>,
+    <span class="string">"is_enrolled"</span>: <span class="keyword">True</span>,
+    <span class="string">"courses"</span>: [<span class="string">"Math"</span>, <span class="string">"Physics"</span>, <span class="string">"Computer Science"</span>]
+}
+
+<span class="comment"># Checking if a key exists in a dictionary using the `in` keyword</span>
+<span class="function">print</span>(<span class="string">"name"</span> <span class="keyword">in</span> student)   <span class="comment"># Output: True</span>
+<span class="function">print</span>(<span class="string">"grade"</span> <span class="keyword">in</span> student)  <span class="comment"># Output: False</span>
+
+<span class="comment"># Iterating through keys and values</span>
+<span class="keyword">for</span> key, value <span class="keyword">in</span> student.items():
+    <span class="function">print</span>(<span class="function">f</span><span class="string">"{key}: {value}"</span>)
+
+<span class="comment"># Output:
+# name: Alice
+# age: 20
+# gpa: 3.8
+# is_enrolled: True
+# courses: ['Math', 'Physics', 'Computer Science']</span></code></pre>
+    </div>
+
+    <ul>
+      <li>How would you check if a key exists in a dictionary?</li>
+      <li>
+        Write a function that takes a dictionary and returns a list of all the keys that have integer values (Hint: use
+        either <code>isinstance()</code> or <code>type()</code> shown in Part 2).
+      </li>
+    </ul>
+
+    <h2>9. User Input and Error Handling</h2>
+    <p>Getting input from users and handling potential errors:</p>
+
+    <div class="example">
+      <h3>Example: Getting valid integer input</h3>
+      <pre><code><span class="keyword">def</span> <span class="function">get_valid_integer</span>():
+    <span class="keyword">while</span> <span class="keyword">True</span>:
+        <span class="keyword">try</span>:
+            user_input = <span class="function">input</span>(<span class="string">"Enter an integer: "</span>)
+            <span class="keyword">return</span> <span class="function">int</span>(user_input)
+        <span class="keyword">except</span> <span class="function">ValueError</span>:
+            <span class="function">print</span>(<span class="string">"Invalid input. Please enter a valid integer."</span>)
+
+<span class="comment"># Usage</span>
+number = <span class="function">get_valid_integer</span>()
+<span class="function">print</span>(<span class="function">f</span><span class="string">"You entered: {number}"</span>)</code></pre>
+    </div>
+
+    <ul>
+      <li>Modify the <code>get_valid_integer</code> function to accept only positive integers.</li>
+      <li>
+        Write a function that prompts the user for a file name and safely opens the file, handling potential
+        <code>FileNotFoundError</code>.
+      </li>
+      <li>How can you use a try-except block to handle division by zero errors?</li>
+    </ul>
+
+    <h2>10. Functions as Code Organization</h2>
+    <p>Using functions to improve code readability and reusability:</p>
+
+    <div class="example">
+      <h3>Example: Organizing code with functions</h3>
+      <pre><code><span class="keyword">def</span> <span class="function">celsius_to_fahrenheit</span>(celsius):
+    <span class="keyword">return</span> (celsius * <span class="number">9</span>/<span class="number">5</span>) + <span class="number">32</span>
+
+<span class="keyword">def</span> <span class="function">fahrenheit_to_celsius</span>(fahrenheit):
+    <span class="keyword">return</span> (fahrenheit - <span class="number">32</span>) * <span class="number">5</span>/<span class="number">9</span>
+
+<span class="keyword">def</span> <span class="function">get_temperature</span>():
+    temp = <span class="function">float</span>(<span class="function">input</span>(<span class="string">"Enter temperature: "</span>))
+    unit = <span class="function">input</span>(<span class="string">"Enter unit (C/F): "</span>).upper()
+    <span class="keyword">return</span> temp, unit
+
+<span class="keyword">def</span> <span class="function">convert_temperature</span>():
+    temp, unit = <span class="function">get_temperature</span>()
+    <span class="keyword">if</span> unit == <span class="string">"C"</span>:
+        converted = <span class="function">celsius_to_fahrenheit</span>(temp)
+        <span class="function">print</span>(<span class="function">f</span><span class="string">"{temp}°C is {converted:.2f}°F"</span>)
+    <span class="keyword">elif</span> unit == <span class="string">"F"</span>:
+        converted = <span class="function">fahrenheit_to_celsius</span>(temp)
+        <span class="function">print</span>(<span class="function">f</span><span class="string">"{temp}°F is {converted:.2f}°C"</span>)
+    <span class="keyword">else</span>:
+        <span class="function">print</span>(<span class="string">"Invalid unit. Use C for Celsius or F for Fahrenheit."</span>)
+
+<span class="comment"># Usage</span>
+<span class="function">convert_temperature</span>()</code></pre>
+    </div>
+
+    <ul>
+      <li>
+        How does breaking down the temperature conversion program into functions improve its readability and
+        reusability?
+      </li>
+    </ul>
+
+    <h2>11. Basic Programs</h2>
+    <p>Writing functions for common tasks:</p>
+
+    <div class="example">
+      <h3>Example: Reversing a string</h3>
+      <pre><code><span class="keyword">def</span> <span class="function">reverse_string</span>(s):
+    <span class="keyword">return</span> s[::<span class="number">-1</span>]
+
+<span class="comment"># Alternative method</span>
+<span class="keyword">def</span> <span class="function">reverse_string_manual</span>(s):
+    reversed_str = <span class="string">""</span>
+    <span class="keyword">for</span> char <span class="keyword">in</span> s:
+        reversed_str = char + reversed_str
+    <span class="keyword">return</span> reversed_str</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Example: Validating user input</h3>
+      <pre><code><span class="keyword">def</span> <span class="function">get_positive_int</span>():
+    <span class="keyword">while</span> <span class="keyword">True</span>:
+        <span class="keyword">try</span>:
+            num = <span class="function">int</span>(<span class="function">input</span>(<span class="string">"Enter a positive integer: "</span>))
+            <span class="keyword">if</span> num > <span class="number">0</span>:
+                <span class="keyword">return</span> num
+            <span class="keyword">else</span>:
+                <span class="function">print</span>(<span class="string">"Please enter a positive number."</span>)
+        <span class="keyword">except</span> <span class="function">ValueError</span>:
+            <span class="function">print</span>(<span class="string">"Invalid input. Please enter a number."</span>)</code></pre>
+    </div>
+
+    <ul>
+      <li>
+        Why do we use a try-except statement when converting user input using the <code>int()</code> built-in function?
+      </li>
+      <li>How would you modify the <code>get_positive_int()</code> function to accept floating-point numbers?</li>
+    </ul>
+
+    <h2>12. CRUD-like Operations</h2>
+    <p>Implementing Create, Read, Update, and Delete operations with basic validation:</p>
+
+    <div class="example">
+      <h3>Example: CRUD operations on a student database</h3>
+      <pre><code><span class="keyword">def</span> <span class="function">create_student</span>(database, name, age):
+    <span class="keyword">if</span> name <span class="keyword">in</span> database:
+        <span class="function">print</span>(<span class="string">"Error: Student already exists."</span>)
+        <span class="keyword">return</span> <span class="keyword">False</span>
+    <span class="keyword">if</span> <span class="keyword">not</span> <span class="function">isinstance</span>(age, <span class="function">int</span>) <span class="keyword">or</span> age <= <span class="number">0</span>:
+        <span class="function">print</span>(<span class="string">"Error: Invalid age."</span>)
+        <span class="keyword">return</span> <span class="keyword">False</span>
+    database[name] = {<span class="string">"age"</span>: age}
+    <span class="keyword">return</span> <span class="keyword">True</span>
+
+<span class="keyword">def</span> <span class="function">read_student</span>(database, name):
+    <span class="keyword">return</span> database.get(name, <span class="keyword">None</span>)
+
+<span class="keyword">def</span> <span class="function">update_student_age</span>(database, name, new_age):
+    <span class="keyword">if</span> name <span class="keyword">not</span> <span class="keyword">in</span> database:
+        <span class="function">print</span>(<span class="string">"Error: Student not found."</span>)
+        <span class="keyword">return</span> <span class="keyword">False</span>
+    <span class="keyword">if</span> <span class="keyword">not</span> <span class="function">isinstance</span>(new_age, <span class="function">int</span>) <span class="keyword">or</span> new_age <= <span class="number">0</span>:
+        <span class="function">print</span>(<span class="string">"Error: Invalid age."</span>)
+        <span class="keyword">return</span> <span class="keyword">False</span>
+    database[name][<span class="string">"age"</span>] = new_age
+    <span class="keyword">return</span> <span class="keyword">True</span>
+
+<span class="keyword">def</span> <span class="function">delete_student</span>(database, name):
+    <span class="keyword">if</span> name <span class="keyword">not</span> <span class="keyword">in</span> database:
+        <span class="function">print</span>(<span class="string">"Error: Student not found."</span>)
+        <span class="keyword">return</span> <span class="keyword">False</span>
+    <span class="keyword">del</span> database[name]
+    <span class="keyword">return</span> <span class="keyword">True</span>
+
+<span class="comment"># DEMO AREA</span>
+student_db = {}
+<span class="function">create_student</span>(student_db, <span class="string">"Alice"</span>, <span class="number">20</span>)
+<span class="function">print</span>(student_db)  <span class="comment"># Output: {'Alice': {'age': 20}}</span>
+
+<span class="function">update_student_age</span>(student_db, <span class="string">"Alice"</span>, <span class="number">21</span>)
+<span class="function">print</span>(<span class="function">read_student</span>(student_db, <span class="string">"Alice"</span>))  <span class="comment"># Output: {'age': 21}</span>
+
+<span class="function">delete_student</span>(student_db, <span class="string">"Alice"</span>)
+<span class="function">print</span>(student_db)  <span class="comment"># Output: {}</span></code></pre>
+    </div>
+
+    <ul>
+      <li>
+        How would you modify the <code>create_student</code> function to include additional fields like "grade" and
+        "courses"?
+      </li>
+      <li>Write a function to update a student's course list (add or remove courses).</li>
+      <li>Implement a function to display all students in the database, sorted by their age.</li>
+    </ul>
+
+    <h2>13. Dynamic Programming</h2>
+    <p>Creating flexible functions that can adapt to new requirements:</p>
+
+    <div class="example">
+      <h3>Example: Counting occurrences in a list</h3>
+      <pre><code><span class="keyword">def</span> <span class="function">count_occurrences</span>(numbers):
+    even_count = <span class="number">0</span>
+    odd_count = <span class="number">0</span>
+    <span class="keyword">for</span> num <span class="keyword">in</span> numbers:
+        <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span>:
+            even_count += <span class="number">1</span>
+        <span class="keyword">else</span>:
+            odd_count += <span class="number">1</span>
+    <span class="keyword">return</span> even_count<span class="highlight">,</span> odd_count
+
+    
+<span class="comment"># Usage</span>
+numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]
+
+even<span class="highlight">,</span> odd = <span class="function">count_occurrences</span>(numbers)
+
+<span class="function">print</span>(<span class="function">f</span><span class="string">"Even numbers: {even}, Odd numbers: {odd}"</span>)
+
+<span class="comment"># Output: Even numbers: 5, Odd numbers: 5</span></code></pre>
+    </div>
+
+    <ul>
+      <li>
+        How would you modify the <code>count_occurrences</code> function to count occurrences of any number of
+        categories (e.g., positive, negative, and zero)?
+      </li>
+      <li>
+        Write a function that can dynamically create and update counters based on the input data, without predefined
+        categories.
+      </li>
+    </ul>
+
+    <div class="note">
+      <p>
+        <strong>Final Exam Tip:</strong> Remember that the exam will be on paper. Practice writing out your code by
+        hand, paying attention to proper indentation and syntax. Good luck with your studies!
+      </p>
+    </div>
+  </body>
+</html>
