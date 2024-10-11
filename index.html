@@ -345,28 +345,6 @@ fruits.<span class="method">append</span>(<span class="string">"elderberry"</spa
     <h2>7. Dictionaries</h2>
     
     <div class="example">
-      <h3>Example: Iterating through dictionary keys</h3>
-      <pre><code>my_dict = {<span class="string">"apple"</span>: <span class="number">1</span>, <span class="string">"banana"</span>: <span class="number">2</span>, <span class="string">"cherry"</span>: <span class="number">3</span>}
-    
-    <span class="comment"># Iterating through keys (method 1)</span>
-    <span class="keyword">for</span> key <span class="keyword">in</span> my_dict:
-        <span class="function">print</span>(key)
-    
-    <span class="comment"># Iterating through keys (method 2, equivalent to method 1)</span>
-    <span class="keyword">for</span> key <span class="keyword">in</span> my_dict.keys():
-        <span class="function">print</span>(key)
-    
-    <span class="comment"># Output for both methods:
-    # apple
-    # banana
-    # cherry</span></code></pre>
-    </div>
-    
-    <p>
-      Note: When using a dictionary in a for-in loop, Python automatically iterates through the keys. 
-      This means <code>for key in my_dict:</code> is equivalent to <code>for key in my_dict.keys():</code>.
-    </p>
-    
     <p>Creating, modifying, and accessing dictionary data:</p>
 
     <div class="example">
@@ -465,10 +443,6 @@ number = <span class="function">get_valid_integer</span>()
 
     <ul>
       <li>Modify the <code>get_valid_integer</code> function to accept only positive integers.</li>
-      <li>
-        Write a function that prompts the user for a file name and safely opens the file, handling potential
-        <code>FileNotFoundError</code>.
-      </li>
       <li>How can you use a try-except block to handle division by zero errors?</li>
     </ul>
 
@@ -552,7 +526,9 @@ number = <span class="function">get_valid_integer</span>()
 
     <div class="example">
       <h3>Example: CRUD operations on a student database</h3>
-      <pre><code><span class="keyword">def</span> <span class="function">create_student</span>(database, name, age):
+      <pre><code><span class="comment"># The database parameter is a dictionary in the following functions</span>
+        
+<span class="keyword">def</span> <span class="function">create_student</span>(database, name, age):
     <span class="keyword">if</span> name <span class="keyword">in</span> database:
         <span class="function">print</span>(<span class="string">"Error: Student already exists."</span>)
         <span class="keyword">return</span> <span class="keyword">False</span>
