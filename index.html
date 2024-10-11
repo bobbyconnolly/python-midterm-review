@@ -546,44 +546,57 @@ number = <span class="function">get_valid_integer</span>()
       <pre><code><span class="keyword">def</span> <span class="function">create_inventory</span>():
         <span class="keyword">return</span> {}
     
-    <span class="keyword">def</span> <span class="function">add_product</span>(inventory, product_name, quantity):
-        <span class="keyword">if</span> product_name <span class="keyword">in</span> inventory:
-            <span class="function">print</span>(<span class="string">f"Error: {product_name} already exists."</span>)
-            <span class="keyword">return</span> <span class="keyword">False</span>
-        <span class="keyword">if</span> <span class="keyword">not</span> <span class="function">isinstance</span>(quantity, <span class="function">int</span>) <span class="keyword">or</span> quantity <= <span class="number">0</span>:
-            <span class="function">print</span>(<span class="string">"Error: Invalid quantity."</span>)
-            <span class="keyword">return</span> <span class="keyword">False</span>
-        inventory[product_name] = quantity
-        <span class="keyword">return</span> <span class="keyword">True</span>
-    
-    <span class="keyword">def</span> <span class="function">get_quantity</span>(inventory, product_name):
-        <span class="keyword">return</span> inventory.get(product_name, <span class="keyword">None</span>)
-    
-    <span class="keyword">def</span> <span class="function">update_quantity</span>(inventory, product_name, new_quantity):
-        <span class="keyword">if</span> product_name <span class="keyword">not</span> <span class="keyword">in</span> inventory:
-            <span class="function">print</span>(<span class="string">f"Error: {product_name} not found."</span>)
-            <span class="keyword">return</span> <span class="keyword">False</span>
-        <span class="keyword">if</span> <span class="keyword">not</span> <span class="function">isinstance</span>(new_quantity, <span class="function">int</span>) <span class="keyword">or</span> new_quantity <= <span class="number">0</span>:
-            <span class="function">print</span>(<span class="string">"Error: Invalid quantity."</span>)
-            <span class="keyword">return</span> <span class="keyword">False</span>
-        inventory[product_name] = new_quantity
-        <span class="keyword">return</span> <span class="keyword">True</span>
-    
-    <span class="keyword">def</span> <span class="function">remove_product</span>(inventory, product_name):
-        <span class="keyword">if</span> product_name <span class="keyword">not</span> <span class="keyword">in</span> inventory:
-            <span class="function">print</span>(<span class="string">f"Error: {product_name} not found."</span>)
-            <span class="keyword">return</span> <span class="keyword">False</span>
-        <span class="keyword">del</span> inventory[product_name]
-        <span class="keyword">return</span> <span class="keyword">True</span>
-    
-    <span class="comment"># DEMO AREA</span>
-    inventory = <span class="function">create_inventory</span>()
-    <span class="function">add_product</span>(inventory, <span class="string">"Apple"</span>, <span class="number">50</span>)
-    <span class="function">print</span>(inventory)  <span class="comment"># Output: {'Apple': 50}</span>
-    <span class="function">update_quantity</span>(inventory, <span class="string">"Apple"</span>, <span class="number">75</span>)
-    <span class="function">print</span>(<span class="function">get_quantity</span>(inventory, <span class="string">"Apple"</span>))  <span class="comment"># Output: 75</span>
-    <span class="function">remove_product</span>(inventory, <span class="string">"Apple"</span>)
-    <span class="function">print</span>(inventory)  <span class="comment"># Output: {}</span></code></pre>
+<span class="keyword">def</span> <span class="function">add_product</span>(inventory, product_name, quantity):
+    <span class="keyword">if</span> product_name <span class="keyword">in</span> inventory:
+        <span class="function">print</span>(<span class="string">f"Error: {product_name} already exists."</span>)
+        <span class="keyword">return</span> <span class="keyword">False</span>
+        
+    <span class="keyword">if</span> <span class="keyword">not</span> <span class="function">isinstance</span>(quantity, <span class="function">int</span>) <span class="keyword">or</span> quantity <= <span class="number">0</span>:
+        <span class="function">print</span>(<span class="string">"Error: Invalid quantity."</span>)
+        <span class="keyword">return</span> <span class="keyword">False</span>
+      
+    inventory[product_name] = quantity
+    <span class="keyword">return</span> <span class="keyword">True</span>
+
+      
+<span class="keyword">def</span> <span class="function">get_quantity</span>(inventory, product_name):
+    quantity = inventory.get(product_name, <span class="keyword">None</span>)
+    <span class="keyword">return</span> = quantity
+
+      
+<span class="keyword">def</span> <span class="function">update_quantity</span>(inventory, product_name, new_quantity):
+    <span class="keyword">if</span> product_name <span class="keyword">not</span> <span class="keyword">in</span> inventory:
+        <span class="function">print</span>(<span class="string">f"Error: {product_name} not found."</span>)
+        <span class="keyword">return</span> <span class="keyword">False</span>
+      
+    <span class="keyword">if</span> <span class="keyword">not</span> <span class="function">isinstance</span>(new_quantity, <span class="function">int</span>) <span class="keyword">or</span> new_quantity <= <span class="number">0</span>:
+        <span class="function">print</span>(<span class="string">"Error: Invalid quantity."</span>)
+        <span class="keyword">return</span> <span class="keyword">False</span>
+      
+    inventory[product_name] = new_quantity
+    <span class="keyword">return</span> <span class="keyword">True</span>
+
+      
+<span class="keyword">def</span> <span class="function">remove_product</span>(inventory, product_name):
+    <span class="keyword">if</span> product_name <span class="keyword">not</span> <span class="keyword">in</span> inventory:
+        <span class="function">print</span>(<span class="string">f"Error: {product_name} not found."</span>)
+        <span class="keyword">return</span> <span class="keyword">False</span>
+      
+    <span class="keyword">del</span> inventory[product_name]
+    <span class="keyword">return</span> <span class="keyword">True</span>
+
+      
+<span class="comment"># DEMO AREA</span>
+inventory = <span class="function">create_inventory</span>()
+      
+<span class="function">add_product</span>(inventory, <span class="string">"Apple"</span>, <span class="number">50</span>)
+<span class="function">print</span>(inventory)  <span class="comment"># Output: {'Apple': 50}</span>
+      
+<span class="function">update_quantity</span>(inventory, <span class="string">"Apple"</span>, <span class="number">75</span>)
+<span class="function">print</span>(<span class="function">get_quantity</span>(inventory, <span class="string">"Apple"</span>))  <span class="comment"># Output: 75</span>
+      
+<span class="function">remove_product</span>(inventory, <span class="string">"Apple"</span>)
+<span class="function">print</span>(inventory)  <span class="comment"># Output: {}</span></code></pre>
     </div>
     
     <h2>13. Dynamic Programming</h2>
