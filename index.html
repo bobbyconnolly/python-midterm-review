@@ -539,64 +539,53 @@ number = <span class="function">get_valid_integer</span>()
       <li>How would you modify the <code>get_positive_int()</code> function to accept floating-point numbers?</li>
     </ul>
 
-    <h2>12. CRUD-like Operations</h2>
-    <p>Implementing Create, Read, Update, and Delete operations with basic validation:</p>
-
+    <h2>12. CRUD-like Operations (Simple Dictionary)</h2>
+    <p>Implementing Create, Read, Update, and Delete operations with basic validation using a simple dictionary:</p>
     <div class="example">
-      <h3>Example: CRUD operations on a student database</h3>
-      <pre><code><span class="comment"># The `database` parameter is a dictionary</span>
-        
-<span class="keyword">def</span> <span class="function">create_student</span>(database, name, age):
-    <span class="keyword">if</span> name <span class="keyword">in</span> database:
-        <span class="function">print</span>(<span class="string">"Error: Student already exists."</span>)
-        <span class="keyword">return</span> <span class="keyword">False</span>
-    <span class="keyword">if</span> <span class="keyword">not</span> <span class="function">isinstance</span>(age, <span class="function">int</span>) <span class="keyword">or</span> age <= <span class="number">0</span>:
-        <span class="function">print</span>(<span class="string">"Error: Invalid age."</span>)
-        <span class="keyword">return</span> <span class="keyword">False</span>
-    database[name] = {<span class="string">"age"</span>: age}
-    <span class="keyword">return</span> <span class="keyword">True</span>
-
-<span class="keyword">def</span> <span class="function">read_student</span>(database, name):
-    <span class="keyword">return</span> database.get(name, <span class="keyword">None</span>)
-
-<span class="keyword">def</span> <span class="function">update_student_age</span>(database, name, new_age):
-    <span class="keyword">if</span> name <span class="keyword">not</span> <span class="keyword">in</span> database:
-        <span class="function">print</span>(<span class="string">"Error: Student not found."</span>)
-        <span class="keyword">return</span> <span class="keyword">False</span>
-    <span class="keyword">if</span> <span class="keyword">not</span> <span class="function">isinstance</span>(new_age, <span class="function">int</span>) <span class="keyword">or</span> new_age <= <span class="number">0</span>:
-        <span class="function">print</span>(<span class="string">"Error: Invalid age."</span>)
-        <span class="keyword">return</span> <span class="keyword">False</span>
-    database[name][<span class="string">"age"</span>] = new_age
-    <span class="keyword">return</span> <span class="keyword">True</span>
-
-<span class="keyword">def</span> <span class="function">delete_student</span>(database, name):
-    <span class="keyword">if</span> name <span class="keyword">not</span> <span class="keyword">in</span> database:
-        <span class="function">print</span>(<span class="string">"Error: Student not found."</span>)
-        <span class="keyword">return</span> <span class="keyword">False</span>
-    <span class="keyword">del</span> database[name]
-    <span class="keyword">return</span> <span class="keyword">True</span>
-
-<span class="comment"># DEMO AREA</span>
-student_db = {}
-<span class="function">create_student</span>(student_db, <span class="string">"Alice"</span>, <span class="number">20</span>)
-<span class="function">print</span>(student_db)  <span class="comment"># Output: {'Alice': {'age': 20}}</span>
-
-<span class="function">update_student_age</span>(student_db, <span class="string">"Alice"</span>, <span class="number">21</span>)
-<span class="function">print</span>(<span class="function">read_student</span>(student_db, <span class="string">"Alice"</span>))  <span class="comment"># Output: {'age': 21}</span>
-
-<span class="function">delete_student</span>(student_db, <span class="string">"Alice"</span>)
-<span class="function">print</span>(student_db)  <span class="comment"># Output: {}</span></code></pre>
+      <h3>Example: CRUD operations on a product inventory</h3>
+      <pre><code><span class="keyword">def</span> <span class="function">create_inventory</span>():
+        <span class="keyword">return</span> {}
+    
+    <span class="keyword">def</span> <span class="function">add_product</span>(inventory, product_name, quantity):
+        <span class="keyword">if</span> product_name <span class="keyword">in</span> inventory:
+            <span class="function">print</span>(<span class="string">f"Error: {product_name} already exists."</span>)
+            <span class="keyword">return</span> <span class="keyword">False</span>
+        <span class="keyword">if</span> <span class="keyword">not</span> <span class="function">isinstance</span>(quantity, <span class="function">int</span>) <span class="keyword">or</span> quantity <= <span class="number">0</span>:
+            <span class="function">print</span>(<span class="string">"Error: Invalid quantity."</span>)
+            <span class="keyword">return</span> <span class="keyword">False</span>
+        inventory[product_name] = quantity
+        <span class="keyword">return</span> <span class="keyword">True</span>
+    
+    <span class="keyword">def</span> <span class="function">get_quantity</span>(inventory, product_name):
+        <span class="keyword">return</span> inventory.get(product_name, <span class="keyword">None</span>)
+    
+    <span class="keyword">def</span> <span class="function">update_quantity</span>(inventory, product_name, new_quantity):
+        <span class="keyword">if</span> product_name <span class="keyword">not</span> <span class="keyword">in</span> inventory:
+            <span class="function">print</span>(<span class="string">f"Error: {product_name} not found."</span>)
+            <span class="keyword">return</span> <span class="keyword">False</span>
+        <span class="keyword">if</span> <span class="keyword">not</span> <span class="function">isinstance</span>(new_quantity, <span class="function">int</span>) <span class="keyword">or</span> new_quantity <= <span class="number">0</span>:
+            <span class="function">print</span>(<span class="string">"Error: Invalid quantity."</span>)
+            <span class="keyword">return</span> <span class="keyword">False</span>
+        inventory[product_name] = new_quantity
+        <span class="keyword">return</span> <span class="keyword">True</span>
+    
+    <span class="keyword">def</span> <span class="function">remove_product</span>(inventory, product_name):
+        <span class="keyword">if</span> product_name <span class="keyword">not</span> <span class="keyword">in</span> inventory:
+            <span class="function">print</span>(<span class="string">f"Error: {product_name} not found."</span>)
+            <span class="keyword">return</span> <span class="keyword">False</span>
+        <span class="keyword">del</span> inventory[product_name]
+        <span class="keyword">return</span> <span class="keyword">True</span>
+    
+    <span class="comment"># DEMO AREA</span>
+    inventory = <span class="function">create_inventory</span>()
+    <span class="function">add_product</span>(inventory, <span class="string">"Apple"</span>, <span class="number">50</span>)
+    <span class="function">print</span>(inventory)  <span class="comment"># Output: {'Apple': 50}</span>
+    <span class="function">update_quantity</span>(inventory, <span class="string">"Apple"</span>, <span class="number">75</span>)
+    <span class="function">print</span>(<span class="function">get_quantity</span>(inventory, <span class="string">"Apple"</span>))  <span class="comment"># Output: 75</span>
+    <span class="function">remove_product</span>(inventory, <span class="string">"Apple"</span>)
+    <span class="function">print</span>(inventory)  <span class="comment"># Output: {}</span></code></pre>
     </div>
-
-    <ul>
-      <li>
-        How would you modify the <code>create_student</code> function to include additional fields like "grade" and
-        "courses"?
-      </li>
-      <li>Write a function to update a student's course list (add or remove courses).</li>
-      <li>Implement a function to display all students in the database, sorted by their age.</li>
-    </ul>
-
+    
     <h2>13. Dynamic Programming</h2>
     <p>Creating flexible functions that can adapt to new requirements:</p>
 
