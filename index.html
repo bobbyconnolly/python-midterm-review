@@ -359,7 +359,7 @@ fruits.<span class="method">append</span>(<span class="string">"elderberry"</spa
     <h2>7. Dictionaries</h2>
 
     <p class="definition">
-      Dictionaries are collections of key-value pairs called entries. Unlike lists, which are ordered sequences of items accessed by index, dictionaries use unique keys to access their corresponding values. This makes dictionaries ideal for storing and retrieving data with meaningful identifiers.
+      Dictionaries are collections of key-value pairs called items (or sometimes called "entries" if you are a fan of JavaScript). Unlike lists, which are ordered sequences of items accessed by index, dictionaries use unique keys to access their corresponding values. This makes dictionaries ideal for storing and retrieving data with meaningful identifiers.
     </p>
     
     <p>Creating, modifying, and accessing dictionary data:</p>
@@ -370,11 +370,11 @@ fruits.<span class="method">append</span>(<span class="string">"elderberry"</spa
       <pre><code><span class="comment"># Creating a dictionary</span>
 my_dict = {<span class="string">"name"</span>: <span class="string">"Alice"</span>, <span class="string">"age"</span>: <span class="number">30</span>, <span class="string">"city"</span>: <span class="string">"New York"</span>}
 
-<span class="comment"># Adding/Updating entries</span>
-my_dict[<span class="string">"job"</span>] = <span class="string">"Engineer"</span>  <span class="comment"># Adding a new entry</span>
-my_dict[<span class="string">"age"</span>] = <span class="number">31</span>  <span class="comment"># Updating an existing entry</span>
+<span class="comment"># Adding/Updating Items</span>
+my_dict[<span class="string">"job"</span>] = <span class="string">"Engineer"</span>  <span class="comment"># Adding a new item</span>
+my_dict[<span class="string">"age"</span>] = <span class="number">31</span>  <span class="comment"># Updating an existing item</span>
 
-<span class="comment"># Removing an entry</span>
+<span class="comment"># Removing an item</span>
 <span class="keyword">del</span> my_dict[<span class="string">"city"</span>]
 
 <span class="comment"># Safely getting a value</span>
@@ -384,16 +384,16 @@ my_dict[<span class="string">"age"</span>] = <span class="number">31</span>  <sp
 
     <div class="note">
       <p>
-        <strong>Note:</strong> The syntax for adding and updating dictionary entries is the same:
-        <code>my_dict["key"] = value</code>. If the key doesn't exist, it adds a new entry. If it already exists, it
+        <strong>Note:</strong> The syntax for adding and updating dictionary items is the same:
+        <code>my_dict["key"] = value</code>. If the key doesn't exist, it adds a new item If it already exists, it
         updates the value.
       </p>
     </div>
 
     <ul>
       <li>How do you create a dictionary?</li>
-      <li>How do you add and update entries inside of a dictionary?</li>
-      <li>How do you delete an entry from a dictionary?</li>
+      <li>How do you add and update items inside of a dictionary?</li>
+      <li>How do you delete an item from a dictionary?</li>
       <li>
         Know that you can create a new, empty dictionary with <code>{}</code> and assign it to a variable
         <code>d = {}</code> if you want.
@@ -404,7 +404,7 @@ my_dict[<span class="string">"age"</span>] = <span class="number">31</span>  <sp
       </li>
     </ul>
 
-    <h2>8. Dictionary Entries, Keys, and Values</h2>
+    <h2>8. Dictionary Items, Keys, and Values</h2>
     <p>Understanding different types of dictionary values and how to work with them:</p>
 
     <div class="example">
