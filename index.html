@@ -343,6 +343,30 @@ fruits.<span class="method">append</span>(<span class="string">"elderberry"</spa
     </ul>
 
     <h2>7. Dictionaries</h2>
+    
+    <div class="example">
+      <h3>Example: Iterating through dictionary keys</h3>
+      <pre><code>my_dict = {<span class="string">"apple"</span>: <span class="number">1</span>, <span class="string">"banana"</span>: <span class="number">2</span>, <span class="string">"cherry"</span>: <span class="number">3</span>}
+    
+    <span class="comment"># Iterating through keys (method 1)</span>
+    <span class="keyword">for</span> key <span class="keyword">in</span> my_dict:
+        <span class="function">print</span>(key)
+    
+    <span class="comment"># Iterating through keys (method 2, equivalent to method 1)</span>
+    <span class="keyword">for</span> key <span class="keyword">in</span> my_dict.keys():
+        <span class="function">print</span>(key)
+    
+    <span class="comment"># Output for both methods:
+    # apple
+    # banana
+    # cherry</span></code></pre>
+    </div>
+    
+    <p>
+      Note: When using a dictionary in a for-in loop, Python automatically iterates through the keys. 
+      This means <code>for key in my_dict:</code> is equivalent to <code>for key in my_dict.keys():</code>.
+    </p>
+    
     <p>Creating, modifying, and accessing dictionary data:</p>
 
     <div class="example">
